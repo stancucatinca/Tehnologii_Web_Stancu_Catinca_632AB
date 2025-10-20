@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RuSh - Contul meu</title>
+  <title>RuSh - Înregistrare</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,21 +15,21 @@
       margin: 0;
     }
 
-    .account-box {
+    .signup-box {
       background-color: #fff;
-      padding: 25px;
+      padding: 30px 25px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      width: 340px;
+      width: 320px;
       text-align: center;
     }
 
-    .account-box h2 {
-      color: #0d6efd;
+    .signup-box h2 {
       margin-bottom: 20px;
+      color: #0d6efd;
     }
 
-    .account-box input, .account-box select {
+    .signup-box input {
       width: 100%;
       padding: 8px;
       margin-bottom: 12px;
@@ -37,7 +38,7 @@
       font-size: 14px;
     }
 
-    .account-box button {
+    .signup-box button {
       width: 100%;
       background-color: #0d6efd;
       color: #fff;
@@ -48,45 +49,37 @@
       cursor: pointer;
     }
 
-    .account-box button:hover {
+    .signup-box button:hover {
       background-color: #0b5ed7;
     }
 
-    .back-link {
-      margin-top: 10px;
-      display: inline-block;
+    .signup-box p {
+      margin-top: 15px;
       font-size: 13px;
     }
 
-    .back-link a {
-      text-decoration: none;
+    .signup-box a {
       color: #0d6efd;
+      text-decoration: none;
     }
 
-    .back-link a:hover {
+    .signup-box a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="account-box">
-    <h2>Contul meu</h2>
+  <div class="signup-box">
+    <h2><a href="index.html" style="color:#0d6efd; text-decoration:none;">← RuSh</a></h2>
     <form>
-      <input type="text" placeholder="Nume" required>
-      <input type="text" placeholder="Prenume" required>
+      <input type="text" placeholder="Nume complet" required>
       <input type="email" placeholder="Email" required>
-      <input type="tel" placeholder="Număr de telefon" required>
-      <select required>
-        <option value="">Selectează statusul</option>
-        <option value="client">Client</option>
-        <option value="sofer">Șofer</option>
-      </select>
-      <button type="submit">Salvează</button>
+      <input type="password" placeholder="Parolă" required>
+      <input type="password" placeholder="Confirmă parola" required>
+      <button type="submit">Creează cont</button>
     </form>
-    <div class="back-link">
-      <a href="comanda.html">← Înapoi la comandă</a>
-    </div>
+    <p>Ai deja un cont? <a href="login.html">Conectează-te</a></p>
   </div>
 
 </body>

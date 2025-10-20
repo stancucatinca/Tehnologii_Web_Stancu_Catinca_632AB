@@ -1,0 +1,71 @@
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RuSh - Preluare șofer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .pickup-box {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 340px;
+    }
+
+    h2 {
+      color: #0d6efd;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .info {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .info strong {
+      display: inline-block;
+      width: 120px;
+    }
+
+    .cancel-btn {
+      width: 100%;
+      background-color: #dc2626;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .cancel-btn:hover {
+      background-color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pickup-box">
+    <h2>Șoferul este pe drum</h2>
+    <div class="info"><strong>Nume șofer:</strong> Ionescu Mihai</div>
+    <div class="info"><strong>Mașină:</strong> Dacia Logan Albă</div>
+    <div class="info"><strong>Număr înmatriculare:</strong> B-123-XYZ</div>
+    <div class="info"><strong>Rating:</strong> ⭐ 4.9 / 5</div>
+    <div class="info"><strong>Timp estimat:</strong> 5 minute</div>
+
+    <button class="cancel-btn" onclick="alert('Comanda a fost anulată')">Anulează comanda</button>
+  </div>
+
+</body>
+</html>
