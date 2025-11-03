@@ -1,0 +1,327 @@
+/* ---------- Bază ---------- */
+:root {
+  --bg: #eef3f8;
+  --white: #fff;
+  --text: #1e293b;
+  --muted: #475569;
+  --line: #d1d5db;
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --nav-bg: #e8eefc;
+  --nav-line: #cdd6f0;
+  --warn: #dc2626;
+  --warn-hover: #b91c1c;
+  --ok: #16a34a;
+  --ok-hover: #15803d;
+  --amber: #f59e0b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  grid-area: header;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+header button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background .2s;
+}
+header button:hover { background: var(--primary-hover); }
+
+/* ---------- NAV ---------- */
+nav {
+  grid-area: nav;
+  background: var(--nav-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 12px;
+  border-bottom: 1px solid var(--nav-line);
+}
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color .2s;
+}
+nav a:hover, nav a.active {
+  color: var(--primary);
+}
+
+/* ---------- GRID LAYOUT pentru index ---------- */
+body.index-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main aside"
+    "footer footer";
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+/* ---------- MAIN ---------- */
+main {
+  grid-area: main;
+  background: var(--white);
+  padding: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  margin-top: 15px;
+}
+.cta-buttons button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background .2s;
+}
+.cta-buttons button:hover { background: var(--primary-hover); }
+.cta-buttons a { color: var(--text); text-decoration: none; }
+
+.hero img {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin-top: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- ASIDE ---------- */
+aside {
+  grid-area: aside;
+  background: var(--white);
+  border-left: 1px solid var(--line);
+  padding: 25px;
+  margin: 20px 20px 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+aside h3 {
+  color: var(--primary);
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+.news-list li {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  grid-area: footer;
+  background: var(--white);
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #64748b;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Carduri pentru alte pagini ---------- */
+.center-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-box, .signup-box, .order-box, .account-box,
+.driver-box, .driver-trip-box, .pickup-box, .active-trip-box,
+.finish-box {
+  background: var(--white);
+  padding: 20px 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 340px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.login-box h2, .signup-box h2, .order-box h2, .account-box h2,
+.driver-box h2, .pickup-box h2, .active-trip-box h2, .finish-box h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* ---------- Elemente și butoane ---------- */
+button {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+button:hover { opacity: 0.95; }
+
+.back-link { margin-top: 10px; font-size: 13px; text-align: center; }
+.back-link a { text-decoration: none; color: var(--primary); }
+.back-link a:hover { text-decoration: underline; }
+
+/* ---------- Responsive Design ---------- */
+
+/* === 🖥️ DESKTOP (≥900px) === */
+@media (min-width: 900px) {
+  body.index-layout {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "main aside"
+      "footer footer";
+  }
+
+  header .logo {
+    font-size: 32px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  main h1 {
+    font-size: 34px;
+  }
+
+  aside {
+    font-size: 15px;
+  }
+}
+
+/* === 📱 MOBIL (<900px) === */
+@media (max-width: 899px) {
+  body.index-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main, aside {
+    margin: 10px;
+    padding: 25px;
+  }
+
+  main h1 {
+    font-size: 24px;
+  }
+
+  main p {
+    font-size: 14px;
+  }
+
+  .cta-buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  aside h3 {
+    font-size: 16px;
+  }
+
+  .news-list li {
+    font-size: 13px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  .login-box, .signup-box, .order-box, .account-box,
+  .driver-box, .driver-trip-box, .pickup-box, .active-trip-box,
+  .finish-box {
+    width: 90%;
+    max-width: 420px;
+  }
+}
