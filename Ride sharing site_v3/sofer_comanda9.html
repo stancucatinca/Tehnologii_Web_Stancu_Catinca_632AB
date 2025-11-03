@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RuSh - Comandă client</title>
+
+  <style>
+  :root {
+    --bg: #f5f9fc;
+    --white: #fff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --line: #cbd5e1;
+    --primary: #0d6efd;
+    --ok: #16a34a;
+    --ok-hover: #15803d;
+    --warn: #dc2626;
+    --warn-hover: #b91c1c;
+    --amber: #f59e0b;
+    --accent: #f1f5f9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .driver-box {
+    background: var(--white);
+    padding: 2rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    width: 460px;
+    max-width: 95%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .driver-box h2 {
+    color: var(--primary);
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .driver-box .info {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .driver-box .info strong {
+    display: inline-block;
+    width: 140px;
+    color: var(--muted);
+  }
+
+  .driver-box .rating {
+    font-size: 0.95rem;
+    color: var(--amber);
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  .driver-box .reviews {
+    background: var(--accent);
+    padding: 0.9rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .driver-box .reviews p {
+    margin-bottom: 0.5rem;
+  }
+
+  .accept-btn,
+  .cancel-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    transition: background 0.2s ease;
+  }
+
+  .accept-btn {
+    background-color: var(--ok);
+  }
+  .accept-btn:hover {
+    background-color: var(--ok-hover);
+  }
+
+  .cancel-btn {
+    background-color: var(--warn);
+  }
+  .cancel-btn:hover {
+    background-color: var(--warn-hover);
+  }
+
+  .back-link {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .back-link a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+
+  #top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    text-decoration: none;
+    z-index: 99;
+    transition: all 0.3s ease;
+  }
+
+  #top-btn:hover {
+    background: #0b5ed7;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 600px) {
+    html { font-size: 15px; }
+
+    .driver-box {
+      padding: 1.5rem;
+    }
+
+    .driver-box h2 {
+      font-size: 1.4rem;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <div class="driver-box">
+    <h2>Comandă client</h2>
+
+    <div class="info"><strong>Nume client:</strong> Popescu Andrei</div>
+    <div class="info"><strong>Plecare:</strong> Str. Exemplu 1</div>
+    <div class="info"><strong>Destinație:</strong> Bd. Libertății 45</div>
+    <div class="info"><strong>Cost:</strong> 25 RON</div>
+
+    <div class="rating">⭐ 4.9 / 5 (15 review-uri)</div>
+
+    <div class="reviews">
+      <p>„Client politicos și punctual.”</p>
+      <p>„A fost o cursă plăcută.”</p>
+    </div>
+
+    <!-- ✅ MODIFICARE: redirecționare spre cursa_sofer10 -->
+    <button class="accept-btn" onclick="acceptaComanda()">Acceptă comanda</button>
+
+    <button class="cancel-btn" onclick="alert('Comanda a fost respinsă')">Anulează</button>
+
+    <div class="back-link">
+      <a href="index.html">← Înapoi</a>
+    </div>
+  </div>
+
+  <a href="#top" id="top-btn">⬆ Mergi sus</a>
+
+  <script>
+    function acceptaComanda() {
+      alert('Ai acceptat comanda! Vei fi redirecționat către cursa activă...');
+      setTimeout(() => {
+        window.location.href = "cursa_sofer10.html";
+      }, 1000); // mic delay vizual
+    }
+
+    const topBtn = document.getElementById("top-btn");
+    window.addEventListener("scroll", () => {
+      topBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
+    });
+  </script>
+</body>
+</html>
