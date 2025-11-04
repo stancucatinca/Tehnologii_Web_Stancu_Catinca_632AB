@@ -1,0 +1,25 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exercițiul 5</title>
+</head>
+<body>
+  <script>
+    var a = 7, b = 7, c = 7;
+
+    // Verificăm dacă pot forma un triunghi
+    if (a + b > c && a + c > b && b + c > a) {
+      if (a === b && b === c) {
+        console.log("Triunghi echilateral");
+      } else if (a === b || a === c || b === c) {
+        console.log("Triunghi isoscel");
+      } else {
+        console.log("Triunghi oarecare");
+      }
+    } else {
+      console.log("Laturile nu pot forma un triunghi!");
+    }
+  </script>
+</body>
+</html>
