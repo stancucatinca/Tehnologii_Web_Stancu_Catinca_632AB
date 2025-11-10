@@ -30,7 +30,6 @@
     min-height: 100vh;
   }
 
-  /* ---------- GRID LAYOUT ---------- */
   body.index-layout {
     display: grid;
     grid-template-columns: 1fr 280px;
@@ -42,7 +41,6 @@
       "footer footer";
   }
 
-  /* ---------- HEADER ---------- */
   header {
     grid-area: header;
     background: var(--white);
@@ -80,7 +78,6 @@
   }
   header button:hover { background: var(--primary-hover); }
 
-  /* ---------- NAV ---------- */
   nav {
     grid-area: nav;
     background: var(--nav-bg);
@@ -99,11 +96,11 @@
     font-weight: 500;
     font-size: 1rem;
     transition: color .2s;
+    cursor: pointer;
   }
 
   nav a:hover, nav a.active { color: var(--primary); }
 
-  /* ---------- MAIN ---------- */
   main {
     grid-area: main;
     background: var(--white);
@@ -163,7 +160,6 @@
     margin-right: auto;
   }
 
-  /* ---------- ASIDE ---------- */
   aside {
     grid-area: aside;
     background: var(--white);
@@ -195,7 +191,6 @@
     margin-bottom: 0.5rem;
   }
 
-  /* ---------- FOOTER ---------- */
   footer {
     grid-area: footer;
     background: var(--white);
@@ -206,7 +201,6 @@
     border-top: 1px solid var(--line);
   }
 
-  /* ---------- Buton "Mergi sus" ---------- */
   #top-btn {
     position: fixed;
     bottom: 20px;
@@ -229,7 +223,6 @@
     transform: scale(1.05);
   }
 
-  /* ---------- Responsivitate ---------- */
   @media (max-width: 899px) {
     body.index-layout {
       grid-template-columns: 1fr;
@@ -270,13 +263,13 @@
   </header>
 
   <nav>
-    <a href="index.html" class="active">Acasă</a>
-    <a href="#">Despre</a>
-    <a href="#">Tarife</a>
+    <a href="#" id="btn-acasa" class="active">Acasă</a>
+    <a href="#" id="btn-despre">Despre</a>
+    <a href="#" id="btn-tarife">Tarife</a>
     <a href="PP3.html">Comandă</a>
   </nav>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <h1>Ride sharing inteligent, rapid și economic</h1>
       <p>
@@ -308,6 +301,60 @@
     const topBtn = document.getElementById("top-btn");
     window.addEventListener("scroll", () => {
       topBtn.style.display = document.documentElement.scrollTop > 200 ? "block" : "none";
+    });
+
+    const main = document.getElementById("main-content");
+    const btnAcasa = document.getElementById("btn-acasa");
+    const btnDespre = document.getElementById("btn-despre");
+    const btnTarife = document.getElementById("btn-tarife");
+
+    btnAcasa.addEventListener("click", () => {
+      main.innerHTML = `
+        <section class="hero">
+          <h1>Ride sharing inteligent, rapid și economic</h1>
+          <p>RuSh este o aplicație economică ce reduce timpul de așteptare al clienților,
+          permițând șoferilor să preia până la 4 persoane cu destinații asemănătoare sau aflate în drum.</p>
+          <div class="cta-buttons">
+            <a href="signup2.html"><button>Începe acum</button></a>
+            <a href="login1.html"><button>Autentifică-te</button></a>
+          </div>
+          <img src="Images/Poza_RuSh.png" alt="Ride sharing ilustratie">
+        </section>`;
+    });
+
+    btnDespre.addEventListener("click", () => {
+      main.innerHTML = `
+        <section class="hero">
+          <h1>Despre aplicația RuSh</h1>
+          <p><strong>RuSh</strong> este o platformă modernă de ride-sharing care combină
+          inteligența artificială cu analiza rutelor în timp real pentru a conecta pasagerii
+          și șoferii care au trasee similare.</p>
+          <p>Prin sistemul său de potrivire automată, RuSh:
+          <ul style="text-align:left; max-width:600px; margin:0 auto;">
+            <li>Reduce timpul de așteptare pentru clienți;</li>
+            <li>Optimizează costul total al cursei prin partajare;</li>
+            <li>Scade amprenta de carbon prin utilizarea eficientă a vehiculelor;</li>
+            <li>Oferă transparență și siguranță prin ratinguri și istoricul utilizatorilor.</li>
+          </ul>
+          <p>Aplicația este disponibilă pe Android și iOS, iar prin interfața web poți vizualiza
+          rutele, prețurile și ofertele active.</p>
+        </section>`;
+    });
+
+    btnTarife.addEventListener("click", () => {
+      main.innerHTML = `
+        <section class="hero">
+          <h1>Tarife RuSh</h1>
+          <p>Costul mediu per kilometru: <strong>2.50 RON/km</strong></p>
+          <p>Promotii curente:</p>
+          <ul style="text-align:left; max-width:600px; margin:0 auto;">
+            <li>10% reducere pentru cursele efectuate între orele 10:00 - 14:00;</li>
+            <li>Reducere 20% pentru studenți (cu legitimație validă);</li>
+            <li>Curse gratuite la fiecare a 10-a deplasare în aplicație;</li>
+          </ul>
+          <p>Media tarifelor, calculată pe baza ultimelor 1000 de curse, este de
+          <strong>26 RON</strong> per deplasare.</p>
+        </section>`;
     });
   </script>
 </body>
