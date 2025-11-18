@@ -1,0 +1,148 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #6a0572; /* Un mov închis, elegant */
+    --secondary-color: #28a745; /* Verde pentru butoane de succes */
+    --accent-color: #ff9f1c; /* Portocaliu pentru detalii */
+    --bg-color: #f0f2f5; /* Gri deschis pentru fundal */
+    --card-bg: #ffffff; /* Alb pentru carduri */
+    --text-color: #37c8cf; /* Culoare principală text */
+    --light-text-color: #666666; /* Culoare secundară text */
+    --border-color: #e0e0e0; /* Culoare chenar */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Stiluri generale pentru carduri */
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    padding: 30px;
+    margin-bottom: 25px; /* Spațiu între carduri dacă sunt mai multe */
+}
+
+.card-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.card-description {
+    color: var(--light-text-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Stiluri pentru Exercițiul 1 - Lista de Activități */
+.card-activitati {
+    /* Specifice cardului de activitati */
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.input-group input[type="text"] {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 5, 114, 0.2); /* Umbră la focus */
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary:hover {
+    background-color: #55045a; /* Culoare puțin mai închisă la hover */
+    transform: translateY(-2px); /* Efect de ridicare */
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.activity-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.activity-list li {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.activity-list li:last-child {
+    margin-bottom: 0;
+}
+
+.activity-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.activity-text {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.activity-date {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    margin-left: 15px;
+    white-space: nowrap; /* Prevents date from wrapping */
+}
+
