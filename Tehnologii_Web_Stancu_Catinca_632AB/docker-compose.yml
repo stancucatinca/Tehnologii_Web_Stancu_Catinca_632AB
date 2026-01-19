@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: RuSh
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: RuSh_DB  
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rush_app
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
